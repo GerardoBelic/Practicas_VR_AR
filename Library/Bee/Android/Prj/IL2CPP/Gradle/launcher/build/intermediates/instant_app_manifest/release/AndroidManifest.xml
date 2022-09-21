@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.UNAM.Practica1"
+    package="com.UNAM.Practica2"
     android:installLocation="preferExternal"
     android:targetSandboxVersion="2"
     android:versionCode="1"
@@ -118,7 +118,7 @@
 
         <provider
             android:name="androidx.startup.InitializationProvider"
-            android:authorities="com.UNAM.Practica1.androidx-startup"
+            android:authorities="com.UNAM.Practica2.androidx-startup"
             android:exported="false" >
             <meta-data
                 android:name="androidx.emoji2.text.EmojiCompatInitializer"
