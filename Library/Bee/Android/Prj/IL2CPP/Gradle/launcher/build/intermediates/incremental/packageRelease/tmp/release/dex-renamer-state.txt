@@ -1,4 +1,0 @@
-#Tue Sep 20 23:22:59 CDT 2022
-base.0=C\:\\Users\\geraw\\OneDrive\\Documentos\\GitHub\\Practicas_VR_AR\\Library\\Bee\\Android\\Prj\\IL2CPP\\Gradle\\launcher\\build\\intermediates\\dex\\release\\mergeDexRelease\\classes.dex
-path.0=classes.dex
-renamed.0=classes.dex

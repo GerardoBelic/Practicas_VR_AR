@@ -4,5 +4,5 @@
 #Ignorar archivos de la práctica 3 mayores a 100MB
 Practica_3\.apk
 Assets/Practica_3/Video/
-Library/Bee/artifacts/
+Library/Bee/
 Library/PlayerDataCache/
