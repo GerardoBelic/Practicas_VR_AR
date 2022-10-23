@@ -1,8 +1,13 @@
+#Para las practicas de VR
 #Ignorar carpetas backup
-*_BackUpThisFolder_ButDontShipItWithYourGame/
+VR/*_BackUpThisFolder_ButDontShipItWithYourGame/
 
 #Ignorar archivos de la práctica 3 mayores a 100MB
-Practica_3\.apk
-Assets/Practica_3/Video/
-Library/Bee/
-Library/PlayerDataCache/
+VR/Practica_3\.apk
+VR/Assets/Practica_3/Video/
+VR/Library/Bee/
+VR/Library/PlayerDataCache/
+
+#Para las practicas de AR
+#Como los exports contienen el proyecto, no incluimos las carpetas
+AR/*/
