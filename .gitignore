@@ -5,14 +5,14 @@ VR/*_BackUpThisFolder_ButDontShipItWithYourGame/
 #Ignorar archivos de la práctica 3 mayores a 100MB
 VR/Practica_3\.apk
 VR/Assets/Practica_3/Video/
-VR/Library/Bee/
-VR/Library/PlayerDataCache/
+VR/Library/
 
 #Para las practicas de AR
 #Como los exports contienen el proyecto, no incluimos las carpetas de Spark
 AR/Practica_4/
 AR/Practica_5/
 
+AR/Practicas_Unity/*_BackUpThisFolder_ButDontShipItWithYourGame/
 AR/Practicas_Unity/Library/
 AR/Practicas_Unity/Packages/com.ptc.vuforia.engine-10.10.2.tgz
 
