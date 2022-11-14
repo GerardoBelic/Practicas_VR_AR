@@ -53,7 +53,7 @@ public class ControlPelota : MonoBehaviour
     void Update()
     {
 
-        if (transform.position.y < -5.0)
+        if (transform.position.y < -25.0)
         {
             perder = true;
         }

@@ -20,15 +20,30 @@ public class LogicaJuego : MonoBehaviour
     private bool referenciaActivaFirst = false;
     public bool reiniciar;
 
+    public GameObject textoTemporizador;
+    private TextMeshProUGUI temporizador; 
+    private float start;
+    private float currTime;
+    private bool playing = false;
+
     // Start is called before the first frame update
     void Start()
     {
         texto = textoVictoriaODerrota.GetComponent<TextMeshProUGUI>();
+        temporizador = textoTemporizador.GetComponent<TextMeshProUGUI>();
     }
 
     // Update is called once per frame
     void Update()
     {
+
+        if (playing == true)
+            currTime = Time.time;
+        
+        int segundosRestantes = Mathf.RoundToInt((5.0f * 60.0f - (currTime - start)));
+        int fraccionMinutos = segundosRestantes / 60;
+        int fraccionSegundos = segundosRestantes % 60;
+        temporizador.text = fraccionMinutos.ToString() + ":" + ((fraccionSegundos < 10) ? "0" : "") + fraccionSegundos.ToString();
 
         if (referenciaActiva == true && referenciaActivaFirst == false)
         {
@@ -45,6 +60,9 @@ public class LogicaJuego : MonoBehaviour
             textoVictoriaODerrota.SetActive(false);
             nivelActual = Instantiate(niveles[numNivel++], this.transform);
             empezar = false;
+            start = Time.time;
+            textoTemporizador.SetActive(true);
+            playing = true;
         }
 
         if (reiniciar == true)
@@ -54,6 +72,9 @@ public class LogicaJuego : MonoBehaviour
             textoVictoriaODerrota.SetActive(false);
             nivelActual = Instantiate(niveles[numNivel++], this.transform);
             reiniciar = false;
+            start = Time.time;
+            textoTemporizador.SetActive(true);
+            playing = true;
         }
 
         if (nivelActual != null)
@@ -74,15 +95,17 @@ public class LogicaJuego : MonoBehaviour
                     botonEmpezar.SetActive(true);
                     texto.text = "¡Ganaste!";
                     textoVictoriaODerrota.SetActive(true);
+                    playing = false;
                 }
             }
-            else if (statusNivel.perder == true)
+            else if (statusNivel.perder == true || (currTime - start) > 5 * 60.0)
             {
                 Destroy(nivelActual.gameObject);
 
                 botonReiniciar.SetActive(true);
                 texto.text = "Perdiste";
                 textoVictoriaODerrota.SetActive(true);
+                playing = false;
             }
         }
     }
