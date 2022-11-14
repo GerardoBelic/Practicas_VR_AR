@@ -5,21 +5,24 @@ using UnityEngine;
 public class ControlNivel : MonoBehaviour
 {
 
-    public GameObject pelotaActiva;
-    public GameObject ReiniciaBoton;
+    //public GameObject pelotaActiva;
+    //public GameObject ReiniciaBoton;
     
     public Transform inicioPelota;
     public GameObject pelota;
 
-    public void OnTriggerEnter(Collider other)
+    public bool ganar;
+    public bool perder;
+
+    /*public void OnTriggerEnter(Collider other)
     {
         print("Ganaste");
-    }
+    }*/
 
     // Start is called before the first frame update
     void Start()
     {
-       //Instantiate(pelota, inicioPelota);
+       pelota = Instantiate(pelota, inicioPelota);
     }
 
     // Update is called once per frame
@@ -27,11 +30,19 @@ public class ControlNivel : MonoBehaviour
     {
         //if (Input.GetKeyDown(KeyCode.Space))
             //Instantiate(pelota, inicioPelota);
-        if (pelotaActiva == null)
-            perdio();
+        //if (pelotaActiva == null)
+            //perdio();
+
+        ControlPelota statusPelota = pelota.GetComponent<ControlPelota>();
+
+        if (statusPelota != null)
+        {
+            perder = statusPelota.perder;
+            ganar = statusPelota.ganar;
+        }
     }
 
-    public void reinicia()
+    /*public void reinicia()
     {
         pelotaActiva = Instantiate(pelota, inicioPelota);
 
@@ -41,5 +52,5 @@ public class ControlNivel : MonoBehaviour
     public void perdio()
     {
         ReiniciaBoton.SetActive(true);
-    }
+    }*/
 }
