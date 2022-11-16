@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class RotacionCilindro : MonoBehaviour
 {
+
+    public float grados = 10.0f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -13,6 +16,6 @@ public class RotacionCilindro : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Rotate(0, 0, 10 * Time.deltaTime);
+        transform.Rotate(0, 0, grados * Time.deltaTime);
     }
 }

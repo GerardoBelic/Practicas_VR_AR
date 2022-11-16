@@ -86,11 +86,11 @@ public class LogicaJuego : MonoBehaviour
 
                 Destroy(nivelActual.gameObject);
 
-                if (numNivel == 1)
+                if (numNivel == 1 || numNivel == 2)
                 {
                     nivelActual = Instantiate(niveles[numNivel++], this.transform);
                 }
-                else if (numNivel == 2)
+                else if (numNivel == 3)
                 {
                     botonEmpezar.SetActive(true);
                     texto.text = "¡Ganaste!";
