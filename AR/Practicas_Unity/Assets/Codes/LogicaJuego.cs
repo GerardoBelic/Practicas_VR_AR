@@ -26,14 +26,12 @@ public class LogicaJuego : MonoBehaviour
     private float currTime;
     private bool playing = false;
 
-    // Start is called before the first frame update
     void Start()
     {
         texto = textoVictoriaODerrota.GetComponent<TextMeshProUGUI>();
         temporizador = textoTemporizador.GetComponent<TextMeshProUGUI>();
     }
 
-    // Update is called once per frame
     void Update()
     {
 
@@ -43,7 +41,8 @@ public class LogicaJuego : MonoBehaviour
         int segundosRestantes = Mathf.RoundToInt((5.0f * 60.0f - (currTime - start)));
         int fraccionMinutos = segundosRestantes / 60;
         int fraccionSegundos = segundosRestantes % 60;
-        temporizador.text = fraccionMinutos.ToString() + ":" + ((fraccionSegundos < 10) ? "0" : "") + fraccionSegundos.ToString();
+        temporizador.text = fraccionMinutos.ToString() + ":"
+                            + ((fraccionSegundos < 10) ? "0" : "") + fraccionSegundos.ToString();
 
         if (referenciaActiva == true && referenciaActivaFirst == false)
         {
