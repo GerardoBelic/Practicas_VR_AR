@@ -18,3 +18,7 @@ AR/Practicas_Unity/Packages/com.ptc.vuforia.engine-10.10.2.tgz
 
 #Los 7z solo son para guardar algunos respaldos
 *.7z
+
+#Para la practica 8
+VR_Oculus_Meta/Practica_8/Library/
+VR_Oculus_Meta/Practica_8/*_BackUpThisFolder_*/
